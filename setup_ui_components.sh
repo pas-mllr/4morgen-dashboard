@@ -244,4 +244,16 @@ EOL
 # Update tsconfig.json to include the new paths
 sed -i 's/"compilerOptions": {/"compilerOptions": {\n    "baseUrl": ".",\n    "paths": {\n      "@\/*": ["./*"]\n    },/' tsconfig.json
 
+# Update package.json to include necessary dependencies
+npm install @radix-ui/react-avatar @radix-ui/react-slot class-variance-authority clsx tailwind-merge
+
 echo "UI components have been set up successfully!"
+
+# Commit changes
+git add .
+git commit -m "Add UI components and update configuration"
+
+# Push changes to GitHub
+git push origin main
+
+echo "Changes have been committed and pushed to GitHub. You can now redeploy on Vercel."
